@@ -1,6 +1,69 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
+<!-- إعدادات التطبيق -->
+<script src="public/js/config.js"></script>
+
+<!-- Gemini AI -->
+<script src="public/js/gemini-ai.js"></script>
+
+<!-- الذكاء الاصطناعي -->
+<script>
+    // تفعيل Gemini AI عند تحميل الصفحة
+    document.addEventListener('DOMContentLoaded', function() {
+        console.log('🚀 جاري تحميل Nexus Studio مع Gemini AI...');
+        
+        // تأخير بسيط لتحميل كل شيء أولاً
+        setTimeout(() => {
+            // تحقق من وجود المفتاح
+            if (!window.NEXUS_CONFIG || !window.NEXUS_CONFIG.GEMINI_API_KEY) {
+                console.warn('⚠️ لم يتم العثور على مفتاح Gemini API');
+                showNotification('⚠️ مفتاح Gemini API غير موجود', 'warning');
+                return;
+            }
+            
+            // تهيئة Gemini AI
+            const ai = initGeminiAI();
+            
+            if (ai) {
+                console.log('✅ Gemini AI مهيأ وجاهز!');
+                
+                // اختبار اتصال تلقائي
+                ai.testConnection().then(result => {
+                    if (result.connected) {
+                        console.log('🌐 اتصال Gemini API ناجح!');
+                        showNotification('🤖 Gemini AI متصل بنجاح!', 'success');
+                        
+                        // إظهار واجهة المحادثة
+                        setTimeout(() => {
+                            const chatBtn = document.querySelector('.gemini-toggle');
+                            if (chatBtn) {
+                                chatBtn.style.display = 'flex';
+                                chatBtn.innerHTML = `
+                                    <i class="fas fa-robot"></i>
+                                    <span class="badge" style="background: #10b981;">AI</span>
+                                `;
+                            }
+                        }, 1000);
+                    } else {
+                        console.warn('⚠️ فشل اتصال Gemini API:', result.message);
+                        showNotification('⚠️ فشل الاتصال بـ Gemini AI', 'warning');
+                    }
+                });
+                
+            } else {
+                console.error('❌ فشل تهيئة Gemini AI');
+                showNotification('❌ فشل تحميل الذكاء الاصطناعي', 'error');
+            }
+            
+        }, 2000); // تأخير 2 ثانية
+    });
+    
+    // عرض الإشعارات
+    function showNotification(message, type = 'info') {
+        // ... كود الإشعارات السابق ...
+    }
+</script>
     <meta charset="UTF-8">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -185,6 +248,152 @@
     </style>
 </head>
 <body>
+<!-- زر محادثة Gemini AI -->
+<div class="gemini-chat-btn" style="position: fixed; bottom: 20px; left: 20px; z-index: 9999;">
+    <button onclick="openAIChat()" style="width: 60px; height: 60px; background: linear-gradient(135deg, #6366f1, #8b5cf6); color: white; border: none; border-radius: 50%; display: none; flex-direction: column; align-items: center; justify-content: center; cursor: pointer; box-shadow: 0 10px 30px rgba(99, 102, 241, 0.3); transition: all 0.3s;" id="aiChatBtn">
+        <i class="fas fa-robot" style="font-size: 24px;"></i>
+        <span style="font-size: 10px; margin-top: 2px;">AI</span>
+    </button>
+</div>
+
+<script>
+    // فتح محادثة AI
+    function openAIChat() {
+        // إذا كانت هناك واجهة محادثة موجودة
+        const chatWindow = document.querySelector('.gemini-chat-widget');
+        if (chatWindow) {
+            chatWindow.classList.toggle('open');
+        } else {
+            // افتح نافذة محادثة بسيطة
+            const modal = document.createElement('div');
+            modal.style.cssText = `
+                position: fixed;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                background: rgba(0,0,0,0.5);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                z-index: 10000;
+                padding: 20px;
+            `;
+            
+            modal.innerHTML = `
+                <div style="background: white; border-radius: 20px; width: 100%; max-width: 500px; max-height: 80vh; overflow: hidden; box-shadow: 0 25px 50px rgba(0,0,0,0.15);">
+                    <div style="background: linear-gradient(135deg, #6366f1, #8b5cf6); color: white; padding: 20px; display: flex; align-items: center; gap: 15px;">
+                        <div style="width: 40px; height: 40px; background: rgba(255,255,255,0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                        <div>
+                            <h4 style="margin: 0;">Nexa AI</h4>
+                            <p style="margin: 5px 0 0; opacity: 0.8; font-size: 14px;">المساعد الذكي</p>
+                        </div>
+                        <button onclick="this.closest('div[style*=\"position: fixed\"]').remove()" style="margin-right: auto; background: none; border: none; color: white; font-size: 20px; cursor: pointer;">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+                    <div style="padding: 20px; max-height: 50vh; overflow-y: auto;" id="simpleChatMessages">
+                        <div style="background: #f3f4f6; padding: 15px; border-radius: 15px; margin-bottom: 15px;">
+                            <p style="margin: 0;">مرحباً! 👋 أنا Nexa AI، كيف يمكنني مساعدتك اليوم؟</p>
+                        </div>
+                    </div>
+                    <div style="padding: 15px; border-top: 1px solid #e5e7eb; display: flex; gap: 10px;">
+                        <input type="text" id="simpleChatInput" placeholder="اكتب رسالتك..." style="flex: 1; padding: 12px; border: 2px solid #e5e7eb; border-radius: 10px; font-family: 'Cairo';">
+                        <button onclick="sendSimpleChat()" style="background: #6366f1; color: white; border: none; padding: 0 20px; border-radius: 10px; cursor: pointer;">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </div>
+                </div>
+            `;
+            
+            document.body.appendChild(modal);
+            
+            // التركيز على حقل الإدخال
+            setTimeout(() => {
+                document.getElementById('simpleChatInput').focus();
+            }, 100);
+        }
+    }
+    
+    // إرسال رسالة في المحادثة البسيطة
+    async function sendSimpleChat() {
+        const input = document.getElementById('simpleChatInput');
+        const message = input.value.trim();
+        
+        if (!message) return;
+        
+        const messagesDiv = document.getElementById('simpleChatMessages');
+        
+        // إضافة رسالة المستخدم
+        const userMsg = document.createElement('div');
+        userMsg.style.cssText = 'background: #6366f1; color: white; padding: 12px 16px; border-radius: 15px; margin-bottom: 15px; margin-left: 40px;';
+        userMsg.innerHTML = `<p style="margin: 0;">${message}</p>`;
+        messagesDiv.appendChild(userMsg);
+        
+        // مسح الحقل
+        input.value = '';
+        
+        // مؤشر الكتابة
+        const typing = document.createElement('div');
+        typing.style.cssText = 'background: #f3f4f6; padding: 15px; border-radius: 15px; margin-bottom: 15px; display: flex; gap: 5px; justify-content: center;';
+        typing.innerHTML = `
+            <div style="width: 8px; height: 8px; background: #9ca3af; border-radius: 50%; animation: bounce 1.4s infinite;"></div>
+            <div style="width: 8px; height: 8px; background: #9ca3af; border-radius: 50%; animation: bounce 1.4s infinite 0.2s;"></div>
+            <div style="width: 8px; height: 8px; background: #9ca3af; border-radius: 50%; animation: bounce 1.4s infinite 0.4s;"></div>
+        `;
+        messagesDiv.appendChild(typing);
+        
+        // إضافة أنيميشن
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes bounce {
+                0%, 80%, 100% { transform: scale(0); }
+                40% { transform: scale(1); }
+            }
+        `;
+        document.head.appendChild(style);
+        
+        // التمرير لأسفل
+        messagesDiv.scrollTop = messagesDiv.scrollHeight;
+        
+        try {
+            // إرسال إلى Gemini AI
+            const response = await chatWithGemini(message);
+            
+            // إزالة مؤشر الكتابة
+            typing.remove();
+            
+            // إضافة رد AI
+            const aiMsg = document.createElement('div');
+            aiMsg.style.cssText = 'background: #f3f4f6; padding: 12px 16px; border-radius: 15px; margin-bottom: 15px;';
+            aiMsg.innerHTML = `<p style="margin: 0;">${response.message}</p>`;
+            messagesDiv.appendChild(aiMsg);
+            
+            // التمرير لأسفل
+            messagesDiv.scrollTop = messagesDiv.scrollHeight;
+            
+        } catch (error) {
+            // إزالة مؤشر الكتابة
+            typing.remove();
+            
+            // رسالة خطأ
+            const errorMsg = document.createElement('div');
+            errorMsg.style.cssText = 'background: #fef2f2; color: #dc2626; padding: 12px 16px; border-radius: 15px; margin-bottom: 15px; border: 1px solid #fecaca;';
+            errorMsg.innerHTML = `
+                <p style="margin: 0;">
+                    <i class="fas fa-exclamation-circle"></i>
+                    عذراً، حدث خطأ في الاتصال بالذكاء الاصطناعي.
+                </p>
+            `;
+            messagesDiv.appendChild(errorMsg);
+            
+            // التمرير لأسفل
+            messagesDiv.scrollTop = messagesDiv.scrollHeight;
+        }
+    }
+</script>
     <!-- شريط التحميل -->
     <div class="loading-overlay" id="loading">
         <div class="loader"></div>
