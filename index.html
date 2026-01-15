@@ -2,1233 +2,647 @@
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Language" content="ar">
+    <meta name="language" content="Arabic">
+    
     <title>🚀 Nexus Studio | منصة المحتوى الذكية</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <!-- CSS -->
     <link rel="stylesheet" href="public/css/nexus.css">
     <link rel="stylesheet" href="public/css/responsive.css">
     
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    
-    <!-- Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <!-- Favicon -->
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚡</text></svg>">
-</head>
-<body data-theme="light">
-    <!-- شريط التحميل -->
-    <div class="loading-overlay" id="loading">
-        <div class="loader"></div>
-        <p style="margin-top: 20px; color: var(--nexus-primary);">جاري تحميل Nexus Studio...</p>
-    </div>
-
-    <!-- الهيكل الرئيسي -->
-    <div class="app-container">
-        <!-- Header سيتم تحميله عبر JavaScript -->
-        <div id="header"></div>
-        
-        <!-- المحتوى الرئيسي -->
-        <main class="main-content">
-            <!-- قسم البطل -->
-            <section class="hero-section" id="home">
-                <div class="container">
-                    <div class="hero-grid">
-                        <div class="hero-text">
-                            <div class="badge">
-                                <i class="fas fa-mobile-alt"></i>
-                                مطور بالكامل من iPhone
-                            </div>
-                            
-                            <h1 class="hero-title">
-                                <span class="nexus-gradient-text">Nexus Studio</span>
-                                <br>
-                                منصة المحتوى الذكية
-                            </h1>
-                            
-                            <p class="hero-description">
-                                أول منصة محتوى عربية تم تطويرها بالكامل من هاتف محمول. 
-                                أنشئ، حرر، وزع محتواك بذكاء مع مساعد Nexa AI.
-                            </p>
-                            
-                            <div class="hero-actions">
-                                <a href="#demo" class="btn btn-primary btn-lg">
-                                    <i class="fas fa-play"></i>
-                                    تجربة مباشرة
-                                </a>
-                                
-                                <a href="https://github.com/ly902349-arch/nexus-studio" target="_blank" class="btn btn-outline btn-lg">
-                                    <i class="fab fa-github"></i>
-                                    عرض الكود المصدري
-                                </a>
-                            </div>
-                            
-                            <div class="hero-stats">
-                                <div class="stat">
-                                    <div class="stat-number">100%</div>
-                                    <div class="stat-label">تطوير من iPhone</div>
-                                </div>
-                                <div class="stat">
-                                    <div class="stat-number">⚡</div>
-                                    <div class="stat-label">نشر سحابي فوري</div>
-                                </div>
-                                <div class="stat">
-                                    <div class="stat-number">🎨</div>
-                                    <div class="stat-label">تصميم عربي أصيل</div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="hero-visual">
-                            <div class="mockup">
-                                <div class="mockup-screen">
-                                    <div class="screen-content">
-                                        <div class="nexa-ai-demo">
-                                            <div class="ai-header">
-                                                <i class="fas fa-brain"></i>
-                                                <h4>Nexa AI</h4>
-                                                <span class="status online"></span>
-                                            </div>
-                                            <div class="ai-messages">
-                                                <div class="message ai">
-                                                    مرحباً! كيف يمكنني مساعدتك في محتوى اليوم؟
-                                                </div>
-                                            </div>
-                                            <div class="ai-input">
-                                                <input type="text" placeholder="اكتب سؤالك...">
-                                                <button><i class="fas fa-paper-plane"></i></button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            
-            <!-- قسم المميزات -->
-            <section class="features-section" id="features">
-                <div class="container">
-                    <div class="section-header">
-                        <h2>✨ مميزات فريدة</h2>
-                        <p>كل ما تحتاجه لإنشاء محتوى احترافي</p>
-                    </div>
-                    
-                    <div class="features-grid">
-                        <div class="feature-card">
-                            <div class="feature-icon">
-                                <i class="fas fa-mobile-alt"></i>
-                            </div>
-                            <h3>تطوير من iPhone</h3>
-                            <p>أول منصة محتوى يتم تطويرها بالكامل من هاتف محمول باستخدام Working Copy وTermius</p>
-                        </div>
-                        
-                        <div class="feature-card">
-                            <div class="feature-icon">
-                                <i class="fas fa-robot"></i>
-                            </div>
-                            <h3>Nexa AI المساعد</h3>
-                            <p>مساعد ذكي يساعدك في كتابة السيناريو وتحليل الأداء وتوليد أفكار المحتوى</p>
-                        </div>
-                        
-                        <div class="feature-card">
-                            <div class="feature-icon">
-                                <i class="fas fa-cloud-upload-alt"></i>
-                            </div>
-                            <h3>نشر سحابي فوري</h3>
-                            <p>انشر موقعك على Vercel خلال ثوانٍ بدون أي إعدادات معقدة</p>
-                        </div>
-                        
-                        <div class="feature-card">
-                            <div class="feature-icon">
-                                <i class="fas fa-bolt"></i>
-                            </div>
-                            <h3>أداء سريع</h3>
-                            <p>محرك فيديو سريع وتحميل فوري على جميع الأجهزة</p>
-                        </div>
-                        
-                        <div class="feature-card">
-                            <div class="feature-icon">
-                                <i class="fas fa-users"></i>
-                            </div>
-                            <h3>تعاون فوري</h3>
-                            <p>اعمل مع فريقك في الوقت الحقيقي على مشاريع المحتوى</p>
-                        </div>
-                        
-                        <div class="feature-card">
-                            <div class="feature-icon">
-                                <i class="fas fa-chart-line"></i>
-                            </div>
-                            <h3>تحليلات ذكية</h3>
-                            <p>تحليل أداء المحتوى وتقديم توصيات ذكية للتحسين</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            
-            <!-- قسم التجربة المباشرة -->
-            <section class="demo-section" id="demo">
-                <div class="container">
-                    <div class="section-header">
-                        <h2>🎮 جرب Nexus Studio الآن</h2>
-                        <p>اختبر واجهة المنصة مباشرة من هنا</p>
-                    </div>
-                    
-                    <div class="demo-container">
-                        <div class="demo-tabs">
-                            <button class="demo-tab active" onclick="switchDemoTab('editor')">
-                                <i class="fas fa-edit"></i>
-                                محرر فيديو
-                            </button>
-                            <button class="demo-tab" onclick="switchDemoTab('ai')">
-                                <i class="fas fa-brain"></i>
-                                Nexa AI
-                            </button>
-                            <button class="demo-tab" onclick="switchDemoTab('analytics')">
-                                <i class="fas fa-chart-bar"></i>
-                                تحليلات
-                            </button>
-                        </div>
-                        
-                        <div class="demo-content active" id="editorDemo">
-                            <div class="video-editor-demo">
-                                <div class="editor-header">
-                                    <h4><i class="fas fa-video"></i> محرر الفيديو الذكي</h4>
-                                    <button class="btn btn-sm btn-primary">
-                                        <i class="fas fa-upload"></i>
-                                        رفع فيديو
-                                    </button>
-                                </div>
-                                
-                                <div class="editor-tools">
-                                    <button class="tool-btn">
-                                        <i class="fas fa-cut"></i>
-                                        قص
-                                    </button>
-                                    <button class="tool-btn">
-                                        <i class="fas fa-music"></i>
-                                        صوت
-                                    </button>
-                                    <button class="tool-btn">
-                                        <i class="fas fa-text-height"></i>
-                                        نص
-                                    </button>
-                                    <button class="tool-btn">
-                                        <i class="fas fa-magic"></i>
-                                        تأثيرات
-                                    </button>
-                                    <button class="tool-btn">
-                                        <i class="fas fa-palette"></i>
-                                        ألوان
-                                    </button>
-                                </div>
-                                
-                                <div class="editor-preview">
-                                    <div class="preview-placeholder">
-                                        <i class="fas fa-play-circle"></i>
-                                        <p>معاينة الفيديو</p>
-                                        <small>اسحب وأفلت الفيديو هنا</small>
-                                    </div>
-                                </div>
-                                
-                                <div class="editor-timeline">
-                                    <div class="timeline-track"></div>
-                                    <div class="timeline-cursor"></div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="demo-content" id="aiDemo">
-                            <div class="ai-chat-demo">
-                                <div class="ai-header">
-                                    <div class="ai-avatar">
-                                        <i class="fas fa-brain"></i>
-                                    </div>
-                                    <div class="ai-info">
-                                        <h4>Nexa AI</h4>
-                                        <p>مساعدك الذكي للمحتوى</p>
-                                    </div>
-                                    <div class="ai-status online"></div>
-                                </div>
-                                
-                                <div class="ai-messages" id="aiMessages">
-                                    <div class="message nexa">
-                                        <p>مرحباً! أنا Nexa. كيف يمكنني مساعدتك في محتوى اليوم؟</p>
-                                        <span class="time">الآن</span>
-                                    </div>
-                                </div>
-                                
-                                <div class="ai-input">
-                                    <input type="text" 
-                                           id="aiInput" 
-                                           placeholder="اسألني عن أي شيء في المحتوى..."
-                                           onkeydown="handleAIKeyDown(event)">
-                                    <button onclick="sendAIMessage()">
-                                        <i class="fas fa-paper-plane"></i>
-                                    </button>
-                                </div>
-                                
-                                <div class="ai-quick-actions">
-                                    <button class="quick-action" onclick="askAI('أفكار محتوى')">
-                                        <i class="fas fa-lightbulb"></i>
-                                        أفكار
-                                    </button>
-                                    <button class="quick-action" onclick="askAI('تحسين نص')">
-                                        <i class="fas fa-edit"></i>
-                                        تحسين نص
-                                    </button>
-                                    <button class="quick-action" onclick="askAI('تحليل أداء')">
-                                        <i class="fas fa-chart-line"></i>
-                                        تحليل
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="demo-content" id="analyticsDemo">
-                            <div class="analytics-demo">
-                                <div class="analytics-header">
-                                    <h4><i class="fas fa-chart-line"></i> لوحة التحليلات</h4>
-                                    <select class="period-select">
-                                        <option>أخر 7 أيام</option>
-                                        <option>أخر 30 يوم</option>
-                                        <option>هذا الشهر</option>
-                                    </select>
-                                </div>
-                                
-                                <div class="analytics-stats">
-                                    <div class="stat-card">
-                                        <div class="stat-value">1,245</div>
-                                        <div class="stat-label">مشاهدات</div>
-                                        <div class="stat-change positive">+12%</div>
-                                    </div>
-                                    <div class="stat-card">
-                                        <div class="stat-value">84%</div>
-                                        <div class="stat-label">معدل المشاهدة</div>
-                                        <div class="stat-change positive">+5%</div>
-                                    </div>
-                                    <div class="stat-card">
-                                        <div class="stat-value">312</div>
-                                        <div class="stat-label">تفاعل</div>
-                                        <div class="stat-change positive">+8%</div>
-                                    </div>
-                                    <div class="stat-card">
-                                        <div class="stat-value">4:30</div>
-                                        <div class="stat-label">مدة المشاهدة</div>
-                                        <div class="stat-change negative">-2%</div>
-                                    </div>
-                                </div>
-                                
-                                <div class="analytics-chart">
-                                    <div class="chart-placeholder">
-                                        <!-- مخطط بياني محاكي -->
-                                        <div class="chart-bar" style="height: 60%;" data-day="أحد"></div>
-                                        <div class="chart-bar" style="height: 75%;" data-day="اثنين"></div>
-                                        <div class="chart-bar" style="height: 90%;" data-day="ثلاثاء"></div>
-                                        <div class="chart-bar" style="height: 65%;" data-day="أربعاء"></div>
-                                        <div class="chart-bar" style="height: 85%;" data-day="خميس"></div>
-                                        <div class="chart-bar" style="height: 95%;" data-day="جمعة"></div>
-                                        <div class="chart-bar" style="height: 70%;" data-day="سبت"></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            
-            <!-- قسم النشر السحابي -->
-            <section class="deploy-section" id="deploy">
-                <div class="container">
-                    <div class="section-header">
-                        <h2>☁️ نشر سحابي فوري</h2>
-                        <p>انشر موقعك على Vercel خلال 30 ثانية</p>
-                    </div>
-                    
-                    <div class="deploy-steps">
-                        <div class="step">
-                            <div class="step-number">1</div>
-                            <div class="step-content">
-                                <h3>انقر على الزر</h3>
-                                <p>اضغط على زر "نشر على Vercel"</p>
-                            </div>
-                        </div>
-                        
-                        <div class="step">
-                            <div class="step-number">2</div>
-                            <div class="step-content">
-                                <h3>سجل الدخول</h3>
-                                <p>سجل الدخول بحساب GitHub</p>
-                            </div>
-                        </div>
-                        
-                        <div class="step">
-                            <div class="step-number">3</div>
-                            <div class="step-content">
-                                <h3>استورد المشروع</h3>
-                                <p>اختر مستودع nexus-studio</p>
-                            </div>
-                        </div>
-                        
-                        <div class="step">
-                            <div class="step-number">4</div>
-                            <div class="step-content">
-                                <h3>انشر!</h3>
-                                <p>اضغط Deploy واحصل على رابطك</p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="deploy-action">
-                        <a href="https://vercel.com/new" target="_blank" class="btn btn-primary btn-xl">
-                            <i class="fas fa-cloud-upload-alt"></i>
-                            نشر على Vercel الآن
-                        </a>
-                        
-                        <p class="deploy-note">
-                            ستحصل على رابط مثل: <code>nexus-studio.vercel.app</code>
-                        </p>
-                    </div>
-                </div>
-            </section>
-            
-            <!-- قسم GitHub -->
-            <section class="github-section" id="github">
-                <div class="container">
-                    <div class="section-header">
-                        <h2>💻 مشروع مفتوح المصدر</h2>
-                        <p>الكود المصدري كامل متاح للجميع</p>
-                    </div>
-                    
-                    <div class="github-card">
-                        <div class="repo-info">
-                            <div class="repo-header">
-                                <i class="fab fa-github"></i>
-                                <div>
-                                    <h3>ly902349-arch/nexus-studio</h3>
-                                    <p>منصة محتوى ذكية مطورة بالكامل من iPhone</p>
-                                </div>
-                            </div>
-                            
-                            <div class="repo-stats">
-                                <span class="repo-stat">
-                                    <i class="fas fa-code-branch"></i>
-                                    فرع: main
-                                </span>
-                                <span class="repo-stat">
-                                    <i class="fas fa-star"></i>
-                                    نجوم: 1
-                                </span>
-                                <span class="repo-stat">
-                                    <i class="fas fa-code"></i>
-                                    JavaScript
-                                </span>
-                            </div>
-                            
-                            <div class="repo-description">
-                                <p>هذا المشروع يثبت إمكانية التطوير السحابي الكامل من iPhone باستخدام:</p>
-                                <ul>
-                                    <li>Working Copy لإدارة Git</li>
-                                    <li>Termius للوصول SSH</li>
-                                    <li>Safari للاختبار</li>
-                                    <li>Vercel للنشر الفوري</li>
-                                </ul>
-                            </div>
-                        </div>
-                        
-                        <div class="github-actions">
-                            <a href="https://github.com/ly902349-arch/nexus-studio" target="_blank" class="btn btn-dark">
-                                <i class="fab fa-github"></i>
-                                زيارة المستودع
-                            </a>
-                            <a href="https://github.com/ly902349-arch/nexus-studio/archive/refs/heads/main.zip" class="btn btn-outline">
-                                <i class="fas fa-download"></i>
-                                تحميل الكود
-                            </a>
-                            <button class="btn btn-outline" onclick="copyRepoUrl()">
-                                <i class="fas fa-copy"></i>
-                                نسخ رابط Clone
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </section>
-        </main>
-        
-        <!-- Footer سيتم تحميله عبر JavaScript -->
-        <div id="footer"></div>
-    </div>
-
-    <!-- واجهة Nexa AI -->
-    <div class="nexa-widget" id="nexaWidget">
-        <button class="nexa-toggle" onclick="toggleNexaWidget()">
-            <i class="fas fa-robot"></i>
-        </button>
-        
-        <div class="nexa-window">
-            <div class="nexa-header">
-                <div class="nexa-avatar">
-                    <i class="fas fa-brain"></i>
-                </div>
-                <div class="nexa-info">
-                    <h4>Nexa AI</h4>
-                    <p>مساعدك الذكي</p>
-                </div>
-                <button class="nexa-close" onclick="toggleNexaWidget()">
-                    <i class="fas fa-times"></i>
-                </button>
-            </div>
-            
-            <div class="nexa-messages">
-                <div class="message nexa">
-                    <p>مرحباً! كيف يمكنني مساعدتك اليوم؟</p>
-                </div>
-            </div>
-            
-            <div class="nexa-input">
-                <input type="text" placeholder="اكتب رسالتك...">
-                <button><i class="fas fa-paper-plane"></i></button>
-            </div>
-        </div>
-    </div>
-
-    <!-- JavaScript -->
-    <script src="public/js/utils.js"></script>
-    <script src="public/js/app.js"></script>
-    <script src="public/js/nexa-ai.js"></script>
-    
-    <script>
-        // تهيئة التطبيق
-        document.addEventListener('DOMContentLoaded', function() {
-            // إخفاء شاشة التحميل
-            setTimeout(() => {
-                const loading = document.getElementById('loading');
-                if (loading) {
-                    loading.style.opacity = '0';
-                    setTimeout(() => {
-                        loading.style.display = 'none';
-                    }, 300);
-                }
-            }, 1000);
-            
-            // تحميل المكونات
-            loadComponent('header', 'src/components/Header.html');
-            loadComponent('footer', 'src/components/Footer.html');
-            
-            // تهيئة Nexa AI
-            if (window.nexa) {
-                nexa.init();
-            }
-            
-            // تحديث التاريخ
-            updateCurrentDate();
-        });
-        
-        // تحميل مكونات HTML
-        async function loadComponent(elementId, url) {
-            try {
-                const response = await fetch(url);
-                if (!response.ok) throw new Error('Failed to load');
-                
-                const html = await response.text();
-                document.getElementById(elementId).innerHTML = html;
-                
-                // تفعيل الوضع الداكن في Header
-                setupThemeToggle();
-            } catch (error) {
-                console.log('Using fallback for', elementId);
-                // استخدم واجهة افتراضية
-                if (elementId === 'header') {
-                    document.getElementById('header').innerHTML = `
-                        <header style="padding: 1rem; background: var(--nexus-bg-primary); border-bottom: 1px solid var(--nexus-border-light);">
-                            <div style="display: flex; justify-content: space-between; align-items: center;">
-                                <div style="display: flex; align-items: center; gap: 0.5rem;">
-                                    <i class="fas fa-bolt" style="color: var(--nexus-primary);"></i>
-                                    <span style="font-weight: bold;">Nexus Studio</span>
-                                </div>
-                                <button class="theme-toggle" onclick="toggleTheme()">
-                                    <i class="fas fa-moon"></i>
-                                </button>
-                            </div>
-                        </header>
-                    `;
-                }
-            }
+    <style>
+        /* تأكيد اللغة العربية */
+        * {
+            font-family: 'Cairo', 'Arial', sans-serif !important;
+            direction: rtl !important;
+            text-align: right !important;
         }
         
-        // تبديل الوضع الداكن/الفاتح
-        function setupThemeToggle() {
-            const themeToggle = document.querySelector('.theme-toggle');
-            if (themeToggle) {
-                themeToggle.addEventListener('click', toggleTheme);
-            }
+        body {
+            font-family: 'Cairo', -apple-system, BlinkMacSystemFont, sans-serif !important;
+            direction: rtl !important;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #333;
+            min-height: 100vh;
+            text-align: right !important;
+            unicode-bidi: embed;
         }
         
-        function toggleTheme() {
-            const currentTheme = document.body.getAttribute('data-theme');
-            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
-            
-            document.body.setAttribute('data-theme', newTheme);
-            localStorage.setItem('nexus-theme', newTheme);
-            
-            // تحديث الأيقونة
-            const icon = document.querySelector('.theme-toggle i');
-            if (icon) {
-                icon.className = newTheme === 'light' ? 'fas fa-moon' : 'fas fa-sun';
-            }
-            
-            // تأثير بسيط
-            const toggleBtn = document.querySelector('.theme-toggle');
-            if (toggleBtn) {
-                toggleBtn.style.transform = 'scale(0.9)';
-                setTimeout(() => {
-                    toggleBtn.style.transform = 'scale(1)';
-                }, 150);
-            }
+        /* إصلاح الأحرف العربية */
+        .arabic-text {
+            font-family: 'Cairo', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            letter-spacing: 0;
+            line-height: 1.8;
         }
         
-        // تحميل الوضع المحفوظ
-        const savedTheme = localStorage.getItem('nexus-theme') || 'light';
-        document.body.setAttribute('data-theme', savedTheme);
-        
-        // تحديث التاريخ الحالي
-        function updateCurrentDate() {
-            const dateElement = document.querySelector('.current-date');
-            if (dateElement) {
-                const now = new Date();
-                dateElement.textContent = now.toLocaleDateString('ar-EG', {
-                    weekday: 'long',
-                    year: 'numeric',
-                    month: 'long',
-                    day: 'numeric'
-                });
-            }
+        /* شاشة التحميل */
+        .loading-overlay {
+            position: fixed;
+            top: 0;
+            right: 0;
+            left: 0;
+            bottom: 0;
+            background: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
         }
         
-        // تبديل تبويبات التجربة
-        function switchDemoTab(tab) {
-            // إخفاء كل المحتويات
-            document.querySelectorAll('.demo-content').forEach(content => {
-                content.classList.remove('active');
-            });
-            
-            // إلغاء تفعيل كل الأزرار
-            document.querySelectorAll('.demo-tab').forEach(btn => {
-                btn.classList.remove('active');
-            });
-            
-            // تفعيل المحتوى المحدد
-            const targetContent = document.getElementById(tab + 'Demo');
-            if (targetContent) {
-                targetContent.classList.add('active');
-            }
-            
-            // تفعيل الزر المحدد
-            const targetBtn = Array.from(document.querySelectorAll('.demo-tab')).find(btn => 
-                btn.textContent.includes(tab === 'editor' ? 'محرر' : 
-                                       tab === 'ai' ? 'Nexa' : 'تحليلات')
-            );
-            if (targetBtn) {
-                targetBtn.classList.add('active');
-            }
+        .loader {
+            width: 50px;
+            height: 50px;
+            border: 3px solid #f3f3f3;
+            border-top: 3px solid #6366f1;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
         }
         
-        // إدارة Nexa AI في التجربة
-        function sendAIMessage() {
-            constif (!message) return;
-        
-        const messagesDiv = document.getElementById('aiMessages');
-        
-        // إضافة رسالة المستخدم
-        const userMsg = document.createElement('div');
-        userMsg.className = 'message user';
-        userMsg.innerHTML = `
-            <p>${message}</p>
-            <span class="time">الآن</span>
-        `;
-        messagesDiv.appendChild(userMsg);
-        
-        // مسح الحقل
-        input.value = '';
-        
-        // محاكاة مؤشر الكتابة
-        const typingIndicator = document.createElement('div');
-        typingIndicator.className = 'typing-indicator';
-        typingIndicator.innerHTML = `
-            <span></span>
-            <span></span>
-            <span></span>
-        `;
-        messagesDiv.appendChild(typingIndicator);
-        
-        // محاكاة رد Nexa بعد تأخير
-        setTimeout(() => {
-            typingIndicator.remove();
-            
-            const responses = [
-                "فكرة رائعة! يمكنني مساعدتك في تطويرها.",
-                "هذا مناسب جداً لجمهورك المستهدف.",
-                "لدي اقتراحات لتحسين هذه الفكرة.",
-                "بناءً على تحليل أدائك السابق، أنصحك بـ...",
-                "يمكنك البدء في التنفيذ الآن، لديك كل الأدوات."
-            ];
-            
-            const randomResponse = responses[Math.floor(Math.random() * responses.length)];
-            
-            const nexaMsg = document.createElement('div');
-            nexaMsg.className = 'message nexa';
-            nexaMsg.innerHTML = `
-                <p>${randomResponse}</p>
-                <span class="time">الآن</span>
-            `;
-            messagesDiv.appendChild(nexaMsg);
-            
-            // التمرير لأسفل
-            messagesDiv.scrollTop = messagesDiv.scrollHeight;
-        }, 1500);
-    }
-    
-    // التعامل مع مفتاح Enter في AI
-    function handleAIKeyDown(event) {
-        if (event.key === 'Enter' && !event.shiftKey) {
-            event.preventDefault();
-            sendAIMessage();
-        }
-    }
-    
-    // إجراءات سريعة لـ AI
-    function askAI(action) {
-        const input = document.getElementById('aiInput');
-        const actions = {
-            'أفكار محتوى': 'ساعدني في توليد أفكار لمحتوى فيديو جديد عن التكنولوجيا',
-            'تحسين نص': 'تحسين نص الفيديو التالي: "في هذا الفيديو سأشرح..."',
-            'تحليل أداء': 'حلل أداء آخر فيديو نشرته'
-        };
-        
-        input.value = actions[action] || action;
-        input.focus();
-    }
-    
-    // نسخ رابط المستودع
-    function copyRepoUrl() {
-        const repoUrl = 'https://github.com/ly902349-arch/nexus-studio.git';
-        navigator.clipboard.writeText(repoUrl)
-            .then(() => {
-                alert('تم نسخ رابط المستودع: ' + repoUrl);
-            })
-            .catch(() => {
-                prompt('انسخ الرابط التالي:', repoUrl);
-            });
-    }
-    
-    // تبديل واجهة Nexa AI
-    function toggleNexaWidget() {
-        const widget = document.querySelector('.nexa-widget');
-        widget.classList.toggle('open');
-    }
-    
-    // النشر على Vercel
-    function deployToVercel() {
-        window.open('https://vercel.com/new', '_blank');
-    }
-    
-    // التنقل السلس
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-            const href = this.getAttribute('href');
-            if (href === '#') return;
-            
-            e.preventDefault();
-            const target = document.querySelector(href);
-            if (target) {
-                target.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
-                
-                // تحديث URL بدون إعادة تحميل الصفحة
-                history.pushState(null, null, href);
-            }
-        });
-    });
-    
-    // تحديث الأنماط المفقودة
-    const style = document.createElement('style');
-    style.textContent = `
-        /* أنماط إضافية */
-        .hero-section {
-            padding: 6rem 0;
-            background: linear-gradient(135deg, var(--nexus-bg-primary) 0%, var(--nexus-bg-secondary) 100%);
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
         }
         
+        /* تنسيقات أساسية */
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 2rem;
+            padding: 20px;
         }
         
-        .hero-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: center;
-        }
-        
-        .badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            background: var(--nexus-primary);
+        .hero-section {
+            padding: 100px 20px;
+            text-align: center;
             color: white;
-            padding: 0.5rem 1rem;
-            border-radius: 2rem;
-            font-size: 0.875rem;
-            margin-bottom: 1.5rem;
         }
         
         .hero-title {
-            font-size: 3rem;
-            line-height: 1.2;
-            margin-bottom: 1.5rem;
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            background: linear-gradient(45deg, #8b5cf6, #ec4899);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
         }
         
-        .hero-description {
-            font-size: 1.125rem;
-            color: var(--nexus-text-secondary);
-            line-height: 1.6;
-            margin-bottom: 2rem;
+        .hero-subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 40px;
+            opacity: 0.9;
         }
         
-        .hero-actions {
-            display: flex;
-            gap: 1rem;
-            margin-bottom: 3rem;
-        }
-        
-        .hero-stats {
-            display: flex;
-            gap: 2rem;
-        }
-        
-        .stat {
-            text-align: center;
-        }
-        
-        .stat-number {
-            font-size: 1.75rem;
-            font-weight: 700;
-            color: var(--nexus-primary);
-            margin-bottom: 0.5rem;
-        }
-        
-        .stat-label {
-            font-size: 0.875rem;
-            color: var(--nexus-text-tertiary);
-        }
-        
-        .mockup {
-            position: relative;
-        }
-        
-        .mockup-screen {
-            background: white;
-            border-radius: 1rem;
-            padding: 1.5rem;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.1);
-            transform: perspective(1000px) rotateY(-10deg);
-            transition: transform 0.3s;
-        }
-        
-        .mockup:hover .mockup-screen {
-            transform: perspective(1000px) rotateY(0);
-        }
-        
-        .nexa-ai-demo {
-            border: 1px solid var(--nexus-border-light);
-            border-radius: 0.75rem;
-            overflow: hidden;
-        }
-        
-        .ai-header {
-            background: var(--gradient-primary);
-            color: white;
-            padding: 1rem;
-            display: flex;
+        .btn {
+            display: inline-flex;
             align-items: center;
-            gap: 0.75rem;
-        }
-        
-        .status {
-            width: 0.5rem;
-            height: 0.5rem;
-            border-radius: 50%;
-            background: var(--nexus-success);
-        }
-        
-        .status.online::after {
-            content: '';
-            position: absolute;
-            inset: -2px;
-            border-radius: 50%;
-            background: var(--nexus-success);
-            opacity: 0.3;
-            animation: pulse 2s infinite;
-        }
-        
-        .ai-messages {
-            padding: 1rem;
-            min-height: 100px;
-            background: var(--nexus-bg-secondary);
-        }
-        
-        .ai-input {
-            display: flex;
-            border-top: 1px solid var(--nexus-border-light);
-        }
-        
-        .ai-input input {
-            flex: 1;
-            padding: 0.75rem;
+            gap: 10px;
+            padding: 15px 30px;
+            border-radius: 12px;
+            font-weight: 600;
+            text-decoration: none;
             border: none;
-            background: var(--nexus-bg-primary);
-        }
-        
-        .ai-input button {
-            background: var(--nexus-primary);
-            color: white;
-            border: none;
-            padding: 0 1.5rem;
             cursor: pointer;
+            transition: all 0.3s;
+            font-family: 'Cairo', sans-serif;
         }
         
-        .features-section {
-            padding: 5rem 0;
-            background: var(--nexus-bg-secondary);
+        .btn-primary {
+            background: linear-gradient(45deg, #6366f1, #8b5cf6);
+            color: white;
         }
         
-        .section-header {
-            text-align: center;
-            margin-bottom: 3rem;
-        }
-        
-        .section-header h2 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-        }
-        
-        .section-header p {
-            color: var(--nexus-text-secondary);
-            font-size: 1.125rem;
+        .btn-outline {
+            background: transparent;
+            border: 2px solid white;
+            color: white;
         }
         
         .features-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
+            gap: 30px;
+            margin-top: 50px;
         }
         
         .feature-card {
-            background: var(--nexus-bg-primary);
-            border: 1px solid var(--nexus-border-light);
-            border-radius: 1rem;
-            padding: 2rem;
-            transition: all 0.3s;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: transform 0.3s;
         }
         
         .feature-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-            border-color: var(--nexus-primary);
+            transform: translateY(-10px);
         }
         
         .feature-icon {
-            width: 3rem;
-            height: 3rem;
-            background: var(--gradient-primary);
-            border-radius: 0.75rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 1.5rem;
-            color: white;
-            font-size: 1.25rem;
+            font-size: 2.5rem;
+            color: #8b5cf6;
+            margin-bottom: 20px;
         }
         
-        .feature-card h3 {
-            font-size: 1.25rem;
-            margin-bottom: 0.75rem;
+        /* تنسيقات النصوص العربية */
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Cairo', sans-serif !important;
+            font-weight: 700;
+            line-height: 1.3;
         }
         
-        .demo-section {
-            padding: 5rem 0;
+        p, span, div, a, button, li {
+            font-family: 'Cairo', sans-serif !important;
+            line-height: 1.6;
         }
         
-        .demo-container {
-            background: var(--nexus-bg-primary);
-            border: 1px solid var(--nexus-border-light);
-            border-radius: 1rem;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-        }
-        
-        .demo-tabs {
-            display: flex;
-            border-bottom: 1px solid var(--nexus-border-light);
-        }
-        
-        .demo-tab {
-            flex: 1;
-            padding: 1.25rem;
-            background: none;
-            border: none;
-            color: var(--nexus-text-secondary);
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.5rem;
-            transition: all 0.2s;
-        }
-        
-        .demo-tab:hover,
-        .demo-tab.active {
-            background: var(--nexus-bg-secondary);
-            color: var(--nexus-primary);
-            border-bottom: 2px solid var(--nexus-primary);
-        }
-        
-        .demo-content {
-            display: none;
-            padding: 2rem;
-        }
-        
-        .demo-content.active {
-            display: block;
-            animation: fadeIn 0.3s;
-        }
-        
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-        
-        .deploy-section {
-            padding: 5rem 0;
-            background: var(--nexus-bg-secondary);
-        }
-        
-        .deploy-steps {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 2rem;
-            margin: 3rem 0;
-        }
-        
-        .step {
-            display: flex;
-            gap: 1rem;
-            align-items: flex-start;
-        }
-        
-        .step-number {
-            width: 2.5rem;
-            height: 2.5rem;
-            background: var(--gradient-primary);
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: bold;
-            flex-shrink: 0;
-        }
-        
-        .deploy-action {
-            text-align: center;
-            margin-top: 3rem;
-        }
-        
-        .btn-xl {
-            padding: 1.25rem 3rem;
-            font-size: 1.25rem;
-        }
-        
-        .deploy-note {
-            margin-top: 1rem;
-            color: var(--nexus-text-secondary);
-        }
-        
-        .deploy-note code {
-            background: var(--nexus-bg-tertiary);
-            padding: 0.25rem 0.5rem;
-            border-radius: 0.25rem;
-            font-family: monospace;
-        }
-        
-        .github-section {
-            padding: 5rem 0;
-        }
-        
-        .github-card {
-            background: var(--nexus-bg-primary);
-            border: 1px solid var(--nexus-border-light);
-            border-radius: 1rem;
-            padding: 2rem;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-        }
-        
-        .repo-header {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            margin-bottom: 1.5rem;
-        }
-        
-        .repo-header i {
-            font-size: 2rem;
-            color: var(--nexus-text-primary);
-        }
-        
-        .repo-stats {
-            display: flex;
-            gap: 1rem;
-            margin: 1.5rem 0;
-            flex-wrap: wrap;
-        }
-        
-        .repo-stat {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.5rem 1rem;
-            background: var(--nexus-bg-secondary);
-            border-radius: 2rem;
-            font-size: 0.875rem;
-            color: var(--nexus-text-secondary);
-        }
-        
-        .github-actions {
-            display: flex;
-            gap: 1rem;
-            margin-top: 2rem;
-            flex-wrap: wrap;
-        }
-        
-        .btn-dark {
-            background: #24292e;
-            color: white;
-            border: none;
-        }
-        
-        .btn-dark:hover {
-            background: #000;
-        }
-        
-        .nexa-widget {
-            position: fixed;
-            bottom: 2rem;
-            left: 2rem;
-            z-index: 1000;
-        }
-        
-        .nexa-toggle {
-            width: 3.5rem;
-            height: 3.5rem;
-            background: var(--gradient-primary);
-            color: white;
-            border: none;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            cursor: pointer;
-            box-shadow: 0 10px 30px rgba(99, 102, 241, 0.3);
-            transition: all 0.3s;
-        }
-        
-        .nexa-toggle:hover {
-            transform: scale(1.1);
-            box-shadow: 0 15px 40px rgba(99, 102, 241, 0.4);
-        }
-        
-        .nexa-window {
-            position: absolute;
-            bottom: calc(100% + 1rem);
-            left: 0;
-            width: 350px;
-            background: var(--nexus-bg-primary);
-            border: 1px solid var(--nexus-border-light);
-            border-radius: 1rem;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.1);
-            display: none;
-        }
-        
-        .nexa-widget.open .nexa-window {
-            display: block;
-            animation: slideUp 0.3s;
-        }
-        
-        @keyframes slideUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
+        /* إصلاح للجوال */
         @media (max-width: 768px) {
-            .hero-grid {
-                grid-template-columns: 1fr;
-                text-align: center;
+            .hero-title {
+                font-size: 2.5rem;
             }
             
-            .hero-actions {
-                flex-direction: column;
-            }
-            
-            .hero-stats {
-                flex-direction: column;
-                gap: 1.5rem;
+            .hero-subtitle {
+                font-size: 1.2rem;
             }
             
             .features-grid {
                 grid-template-columns: 1fr;
             }
-            
-            .demo-tabs {
-                flex-direction: column;
-            }
-            
-            .deploy-steps {
-                grid-template-columns: 1fr;
-            }
-            
-            .github-actions {
-                flex-direction: column;
-            }
-            
-            .nexa-window {
-                width: 300px;
-                left: -100px;
-            }
         }
-    `;
-    document.head.appendChild(style);
-    
-    // رسالة ترحيب في الكونسول
-    console.log('%c🚀 Nexus Studio %c| تم التحميل بنجاح', 
-        'color: #6366f1; font-weight: bold; font-size: 16px;',
-        'color: #666; font-size: 14px;');
-    console.log('%c📱 تم التطوير بالكامل من iPhone', 'color: #8b5cf6;');
-    console.log('%c💻 GitHub: https://github.com/ly902349-arch/nexus-studio', 'color: #10b981;');
-    console.log('%c☁️ انشر على Vercel: https://vercel.com/new', 'color: #3b82f6;');
-</script>
+    </style>
+</head>
+<body>
+    <!-- شريط التحميل -->
+    <div class="loading-overlay" id="loading">
+        <div class="loader"></div>
+        <p style="margin-top: 20px; color: #6366f1; font-size: 1.2rem;">جاري تحميل Nexus Studio...</p>
+    </div>
+
+    <!-- المحتوى الرئيسي -->
+    <div class="container">
+        <!-- قسم البطل -->
+        <section class="hero-section">
+            <div class="badge" style="background: #10b981; color: white; padding: 8px 20px; border-radius: 20px; display: inline-block; margin-bottom: 30px;">
+                <i class="fas fa-mobile-alt"></i>
+                مطور بالكامل من iPhone
+            </div>
+            
+            <h1 class="hero-title arabic-text">🚀 Nexus Studio</h1>
+            <h2 class="hero-subtitle arabic-text">منصة المحتوى الذكية باللغة العربية</h2>
+            
+            <p class="arabic-text" style="font-size: 1.2rem; max-width: 800px; margin: 0 auto 40px; opacity: 0.9;">
+                أول منصة محتوى عربية تم تطويرها بالكامل من هاتف محمول. 
+                أنشئ، حرر، وزع محتواك بذكاء مع مساعد Nexa AI.
+            </p>
+            
+            <div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; margin-bottom: 50px;">
+                <a href="#features" class="btn btn-primary">
+                    <i class="fas fa-play"></i>
+                    ابدأ التجربة
+                </a>
+                
+                <a href="https://github.com/ly902349-arch/nexus-studio" target="_blank" class="btn btn-outline">
+                    <i class="fab fa-github"></i>
+                    عرض الكود المصدري
+                </a>
+                
+                <a href="https://vercel.com" target="_blank" class="btn" style="background: black; color: white;">
+                    <i class="fas fa-cloud-upload-alt"></i>
+                    نشر على Vercel
+                </a>
+            </div>
+            
+            <!-- إحصاءات -->
+            <div class="stats" style="display: flex; justify-content: center; gap: 40px; flex-wrap: wrap;">
+                <div class="stat" style="text-align: center;">
+                    <div style="font-size: 2.5rem; color: #8b5cf6; margin-bottom: 10px;">📱</div>
+                    <div style="font-weight: bold;">تطوير من iPhone</div>
+                    <div style="font-size: 0.9rem; opacity: 0.8;">Working Copy + Termius</div>
+                </div>
+                
+                <div class="stat" style="text-align: center;">
+                    <div style="font-size: 2.5rem; color: #10b981; margin-bottom: 10px;">⚡</div>
+                    <div style="font-weight: bold;">نشر سحابي</div>
+                    <div style="font-size: 0.9rem; opacity: 0.8;">Vercel في ثوانٍ</div>
+                </div>
+                
+                <div class="stat" style="text-align: center;">
+                    <div style="font-size: 2.5rem; color: #ec4899; margin-bottom: 10px;">🎨</div>
+                    <div style="font-weight: bold;">تصميم عربي</div>
+                    <div style="font-size: 0.9rem; opacity: 0.8;">خط Cairo متكامل</div>
+                </div>
+                
+                <div class="stat" style="text-align: center;">
+                    <div style="font-size: 2.5rem; color: #f59e0b; margin-bottom: 10px;">🤖</div>
+                    <div style="font-weight: bold;">Nexa AI</div>
+                    <div style="font-size: 0.9rem; opacity: 0.8;">مساعد ذكي</div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- المميزات -->
+        <section id="features" style="padding: 80px 20px; background: rgba(255, 255, 255, 0.05); border-radius: 30px; margin-top: 50px;">
+            <h2 style="text-align: center; font-size: 2.5rem; margin-bottom: 20px; color: white;">✨ مميزات فريدة</h2>
+            <p style="text-align: center; font-size: 1.2rem; margin-bottom: 50px; color: rgba(255, 255, 255, 0.8);">كل ما تحتاجه لإنشاء محتوى احترافي</p>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3 style="color: white; margin-bottom: 15px;">تطوير من iPhone</h3>
+                    <p style="color: rgba(255, 255, 255, 0.8);">أول منصة محتوى يتم تطويرها بالكامل من هاتف محمول</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3 style="color: white; margin-bottom: 15px;">Nexa AI المساعد</h3>
+                    <p style="color: rgba(255, 255, 255, 0.8);">مساعد ذكي لكتابة السيناريو وتحليل الأداء</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-cloud-upload-alt"></i>
+                    </div>
+                    <h3 style="color: white; margin-bottom: 15px;">نشر سحابي فوري</h3>
+                    <p style="color: rgba(255, 255, 255, 0.8);">انشر على Vercel خلال ثوانٍ بدون إعدادات</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3 style="color: white; margin-bottom: 15px;">أداء سريع</h3>
+                    <p style="color: rgba(255, 255, 255, 0.8);">محرك فيديو سريع وتحميل فوري</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3 style="color: white; margin-bottom: 15px;">تعاون فوري</h3>
+                    <p style="color: rgba(255, 255, 255, 0.8);">اعمل مع فريقك في الوقت الحقيقي</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3 style="color: white; margin-bottom: 15px;">تحليلات ذكية</h3>
+                    <p style="color: rgba(255, 255, 255, 0.8);">تحليل أداء المحتوى وتقديم توصيات</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- تجربة مباشرة -->
+        <section style="padding: 80px 20px; margin-top: 50px;">
+            <h2 style="text-align: center; font-size: 2.5rem; margin-bottom: 20px; color: white;">🎮 جرب الآن</h2>
+            <p style="text-align: center; font-size: 1.2rem; margin-bottom: 50px; color: rgba(255, 255, 255, 0.8);">اختبر واجهة Nexus Studio مباشرة</p>
+            
+            <div style="background: white; border-radius: 20px; padding: 30px; max-width: 800px; margin: 0 auto;">
+                <!-- محرر فيديو تجريبي -->
+                <div style="text-align: center; margin-bottom: 30px;">
+                    <div style="width: 100%; height: 200px; background: #f3f4f6; border-radius: 10px; display: flex; align-items: center; justify-content: center; margin-bottom: 20px;">
+                        <div style="text-align: center;">
+                            <i class="fas fa-play-circle" style="font-size: 3rem; color: #6366f1;"></i>
+                            <p style="color: #666; margin-top: 10px;">معاينة الفيديو</p>
+                        </div>
+                    </div>
+                    
+                    <div style="display: flex; gap: 10px; justify-content: center; flex-wrap: wrap;">
+                        <button class="btn" style="background: #f3f4f6; color: #333;">
+                            <i class="fas fa-upload"></i>
+                            رفع فيديو
+                        </button>
+                        <button class="btn" style="background: #f3f4f6; color: #333;">
+                            <i class="fas fa-cut"></i>
+                            قص
+                        </button>
+                        <button class="btn" style="background: #f3f4f6; color: #333;">
+                            <i class="fas fa-music"></i>
+                            صوت
+                        </button>
+                        <button class="btn" style="background: #f3f4f6; color: #333;">
+                            <i class="fas fa-text-height"></i>
+                            نص
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Nexa AI تجريبي -->
+                <div style="border-top: 2px solid #f3f4f6; padding-top: 30px;">
+                    <h3 style="text-align: center; color: #333; margin-bottom: 20px;">
+                        <i class="fas fa-robot"></i>
+                        Nexa AI - المساعد الذكي
+                    </h3>
+                    
+                    <div style="background: #f8fafc; border-radius: 10px; padding: 20px; margin-bottom: 20px;">
+                        <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 15px;">
+                            <div style="width: 40px; height: 40px; background: linear-gradient(45deg, #8b5cf6, #ec4899); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white;">
+                                <i class="fas fa-brain"></i>
+                            </div>
+                            <div>
+                                <div style="font-weight: bold; color: #333;">Nexa AI</div>
+                                <div style="font-size: 0.9rem; color: #666;">مساعدك الذكي</div>
+                            </div>
+                            <div style="margin-right: auto; width: 10px; height: 10px; background: #10b981; border-radius: 50%;"></div>
+                        </div>
+                        
+                        <div id="chatMessages" style="min-height: 100px;">
+                            <div style="background: white; padding: 10px 15px; border-radius: 10px; margin-bottom: 10px; max-width: 80%;">
+                                <p style="margin: 0; color: #333;">مرحباً! أنا Nexa. كيف يمكنني مساعدتك في محتوى اليوم؟</p>
+                                <div style="font-size: 0.8rem; color: #999; text-align: left; margin-top: 5px;">الآن</div>
+                            </div>
+                        </div>
+                        
+                        <div style="display: flex; gap: 10px; margin-top: 20px;">
+                            <input type="text" id="aiInput" placeholder="اكتب سؤالك هنا..." style="flex: 1; padding: 10px 15px; border: 2px solid #e5e7eb; border-radius: 8px; font-family: 'Cairo', sans-serif;">
+                            <button onclick="sendMessage()" class="btn" style="background: #6366f1; color: white;">
+                                <i class="fas fa-paper-plane"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- معلومات التقنية -->
+        <section style="padding: 60px 20px; background: rgba(255, 255, 255, 0.05); border-radius: 30px; margin-top: 50px;">
+            <h2 style="text-align: center; font-size: 2rem; margin-bottom: 40px; color: white;">🛠 التقنيات المستخدمة</h2>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 20px; max-width: 800px; margin: 0 auto;">
+                <div style="text-align: center; background: rgba(255, 255, 255, 0.1); padding: 20px; border-radius: 15px;">
+                    <i class="fab fa-html5" style="font-size: 2.5rem; color: #e34f26;"></i>
+                    <div style="margin-top: 10px; font-weight: bold; color: white;">HTML5</div>
+                </div>
+                
+                <div style="text-align: center; background: rgba(255, 255, 255, 0.1); padding: 20px; border-radius: 15px;">
+                    <i class="fab fa-css3-alt" style="font-size: 2.5rem; color: #1572b6;"></i>
+                    <div style="margin-top: 10px; font-weight: bold; color: white;">CSS3</div>
+                </div>
+                
+                <div style="text-align: center; background: rgba(255, 255, 255, 0.1); padding: 20px; border-radius: 15px;">
+                    <i class="fab fa-js" style="font-size: 2.5rem; color: #f7df1e;"></i>
+                    <div style="margin-top: 10px; font-weight: bold; color: white;">JavaScript</div>
+                </div>
+                
+                <div style="text-align: center; background: rgba(255, 255, 255, 0.1); padding: 20px; border-radius: 15px;">
+                    <i class="fab fa-github" style="font-size: 2.5rem; color: white;"></i>
+                    <div style="margin-top: 10px; font-weight: bold; color: white;">GitHub</div>
+                </div>
+                
+                <div style="text-align: center; background: rgba(255, 255, 255, 0.1); padding: 20px; border-radius: 15px;">
+                    <i class="fas fa-bolt" style="font-size: 2.5rem; color: #000;"></i>
+                    <div style="margin-top: 10px; font-weight: bold; color: white;">Vercel</div>
+                </div>
+                
+                <div style="text-align: center; background: rgba(255, 255, 255, 0.1); padding: 20px; border-radius: 15px;">
+                    <i class="fab fa-firebase" style="font-size: 2.5rem; color: #ffca28;"></i>
+                    <div style="margin-top: 10px; font-weight: bold; color: white;">Firebase</div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- رابط المستودع -->
+        <section style="text-align: center; padding: 60px 20px; margin-top: 50px;">
+            <h2 style="font-size: 2rem; margin-bottom: 20px; color: white;">💻 الكود المصدري</h2>
+            <p style="font-size: 1.2rem; margin-bottom: 30px; color: rgba(255, 255, 255, 0.8);">المشروع مفتوح المصدر ومتاح للجميع</p>
+            
+            <div style="background: white; border-radius: 20px; padding: 30px; max-width: 600px; margin: 0 auto;">
+                <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 20px; justify-content: center;">
+                    <i class="fab fa-github" style="font-size: 2rem; color: #333;"></i>
+                    <div style="text-align: right;">
+                        <div style="font-weight: bold; font-size: 1.3rem; color: #333;">ly902349-arch/nexus-studio</div>
+                        <div style="color: #666; font-size: 0.9rem;">منصة محتوى ذكية مطورة من iPhone</div>
+                    </div>
+                </div>
+                
+                <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
+                    <a href="https://github.com/ly902349-arch/nexus-studio" target="_blank" class="btn" style="background: #24292e; color: white;">
+                        <i class="fab fa-github"></i>
+                        زيارة GitHub
+                    </a>
+                    
+                    <a href="https://vercel.com/new" target="_blank" class="btn" style="background: #000; color: white;">
+                        <i class="fas fa-cloud-upload-alt"></i>
+                        نشر على Vercel
+                    </a>
+                    
+                    <button onclick="copyUrl()" class="btn" style="background: #f3f4f6; color: #333;">
+                        <i class="fas fa-copy"></i>
+                        نسخ الرابط
+                    </button>
+                </div>
+                
+                <div style="margin-top: 20px; padding: 15px; background: #f8fafc; border-radius: 10px; font-family: monospace; font-size: 0.9rem; text-align: left; direction: ltr;">
+                    $ git clone https://github.com/ly902349-arch/nexus-studio.git
+                </div>
+            </div>
+        </section>
+        
+        <!-- تذييل الصفحة -->
+        <footer style="text-align: center; padding: 40px 20px; margin-top: 50px; color: rgba(255, 255, 255, 0.7); border-top: 1px solid rgba(255, 255, 255, 0.1);">
+            <div style="margin-bottom: 20px;">
+                <i class="fas fa-bolt" style="font-size: 2rem; color: #8b5cf6;"></i>
+                <div style="font-size: 1.5rem; font-weight: bold; margin-top: 10px;">Nexus Studio</div>
+            </div>
+            
+            <p>تم التطوير بالكامل من iPhone باستخدام Working Copy و Termius</p>
+            <p style="font-size: 0.9rem; margin-top: 20px;">© 2024 - مشروع تجريبي لإثبات إمكانية التطوير السحابي من الهاتف</p>
+            
+            <div style="display: flex; gap: 20px; justify-content: center; margin-top: 30px;">
+                <a href="https://github.com/ly902349-arch/nexus-studio" target="_blank" style="color: white; text-decoration: none;">
+                    <i class="fab fa-github"></i> GitHub
+                </a>
+                <a href="https://vercel.com" target="_blank" style="color: white; text-decoration: none;">
+                    <i class="fas fa-cloud"></i> Vercel
+                </a>
+                <a href="#" onclick="showAbout()" style="color: white; text-decoration: none;">
+                    <i class="fas fa-info-circle"></i> عن المشروع
+                </a>
+            </div>
+        </footer>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        // إخفاء شاشة التحميل
+        window.addEventListener('load', function() {
+            setTimeout(() => {
+                const loading = document.getElementById('loading');
+                loading.style.opacity = '0';
+                setTimeout(() => {
+                    loading.style.display = 'none';
+                }, 300);
+            }, 1000);
+            
+            // تحقق من اللغة
+            checkLanguage();
+        });
+        
+        // التحقق من إعدادات اللغة
+        function checkLanguage() {
+            const html = document.documentElement;
+            
+            // إجبار اللغة العربية
+            if (html.lang !== 'ar') {
+                html.lang = 'ar';
+                console.log('✅ تم تعيين اللغة إلى العربية');
+            }
+            
+            if (html.dir !== 'rtl') {
+                html.dir = 'rtl';
+                console.log('✅ تم تعيين الاتجاه إلى RTL');
+            }
+            
+            // تحقق من الخطوط
+            const bodyStyle = getComputedStyle(document.body);
+            const fontFamily = bodyStyle.fontFamily;
+            
+            if (!fontFamily.includes('Cairo')) {
+                console.warn('⚠️ خط Cairo غير محمل');
+                document.body.style.fontFamily = "'Cairo', 'Arial', sans-serif";
+            }
+            
+            // رسالة ترحيب
+            console.log('🚀 Nexus Studio - اللغة العربية مفعلة');
+            console.log('📱 تم التطوير بالكامل من iPhone');
+            console.log('🌐 الموقع: https://nexus-studio.vercel.app');
+        }
+        
+        // دالة المحادثة
+        function sendMessage() {
+            const input = document.getElementById('aiInput');
+            const message = input.value.trim();
+            
+            if (!message) return;
+            
+            const messagesDiv = document.getElementById('chatMessages');
+            
+            // رسالة المستخدم
+            const userMsg = document.createElement('div');
+            userMsg.style.cssText = 'background: #6366f1; color: white; padding: 10px 15px; border-radius: 10px; margin-bottom: 10px; max-width: 80%; margin-right: auto;';
+            userMsg.innerHTML = `
+                <p style="margin: 0;">${message}</p>
+                <div style="font-size: 0.8rem; opacity: 0.8; text-align: left; margin-top: 5px;">الآن</div>
+            `;
+            messagesDiv.appendChild(userMsg);
+            
+            // مسح الحقل
+            input.value = '';
+            
+            // مؤشر الكتابة
+            const typing = document.createElement('div');
+            typing.id = 'typingIndicator';
+            typing.style.cssText = 'background: white; padding: 10px 15px; border-radius: 10px; margin-bottom: 10px; max-width: 80%;';
+            typing.innerHTML = `
+                <div style="display: flex; gap: 5px;">
+                    <div style="width: 8px; height: 8px; background: #ccc; border-radius: 50%; animation: bounce 1.4s infinite;"></div>
+                    <div style="width: 8px; height: 8px; background: #ccc; border-radius: 50%; animation: bounce 1.4s infinite 0.2s;"></div>
+                    <div style="width: 8px; height: 8px; background: #ccc; border-radius: 50%; animation: bounce 1.4s infinite 0.4s;"></div>
+                </div>
+            `;
+            messagesDiv.appendChild(typing);
+            
+            // إضافة أنيميشن
+            const style = document.createElement('style');
+            style.textContent = `
+                @keyframes bounce {
+                    0%, 80%, 100% { transform: scale(0); }
+                    40% { transform: scale(1); }
+                }
+            `;
+            document.head.appendChild(style);
+            
+            // رد Nexa بعد تأخير
+            setTimeout(() => {
+                typing.remove();
+                
+                const responses = [
+                    "فكرة رائعة! هل تريدني أن أوسع فيها؟",
+                    "يمكنني مساعدتك في تحسين هذا المحتوى.",
+                    "بناءً على أدائك السابق، أنصحك بـ...",
+                    "هذا مناسب جداً لجمهورك المستهدف.",
+                    "لدي اقتراحات لتحسين العنوان والوصف."
+                ];
+                
+                const randomResponse = responses[Math.floor(Math.random() * responses.length)];
+                
+                const nexaMsg = document.createElement('div');
+                nexaMsg.style.cssText = 'background: white; padding: 10px 15px; border-radius: 10px; margin-bottom: 10px; max-width: 80%;';
+                nexaMsg.innerHTML = `
+                    <p style="margin: 0; color: #333;">${randomResponse}</p>
+                    <div style="font-size: 0.8rem; color: #999; text-align: left; margin-top: 5px;">الآن</div>
+                `;
+                messagesDiv.appendChild(nexaMsg);
+                
+                // التمرير لأسفل
+                messagesDiv.scrollTop = messagesDiv.scrollHeight;
+            }, 1500);
+        }
+        
+        // السماح بـ Enter في المحادثة
+        document.getElementById('aiInput').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                sendMessage();
+            }
+        });
+        
+        // نسخ الرابط
+        function copyUrl() {
+            const url = 'https://github.com/ly902349-arch/nexus-studio';
+            navigator.clipboard.writeText(url)
+                .then(() => {
+                    alert('تم نسخ رابط المستودع: ' + url);
+                })
+                .catch(() => {
+                    prompt('انسخ الرابط التالي:', url);
+                });
+        }
+        
+        // عن المشروع
+        function showAbout() {
+            alert('Nexus Studio - مشروع تجريبي\n\nالهدف: إثبات إمكانية التطوير السحابي الكامل من iPhone\n\nتم استخدام:\n- Working Copy لإدارة Git\n- Termius للوصول SSH\n- Safari للاختبار\n- Vercel للنشر الفوري\n\nالمطور: ly902349-arch');
+        }
+        
+        // تحميل CSS الخارجي إذا فشل
+        setTimeout(() => {
+            const links = document.querySelectorAll('link[rel="stylesheet"]');
+            let cssLoaded = false;
+            
+            links.forEach(link => {
+                if (link.href.includes('nexus.css') || link.href.includes('responsive.css')) {
+                    // تحقق إذا تم تحميل CSS
+                    const sheet = link.sheet;
+                    if (!sheet) {
+                        console.warn('⚠️ CSS غير محمل: ' + link.href);
+                        cssLoaded = false;
+                    } else {
+                        cssLoaded = true;
+                    }
+                }
+            });
+            
+            if (!cssLoaded) {
+                console.log('🔧 استخدام CSS احتياطي');
+                // CSS احتياطي مضمن بالفعل في <style>
+            }
+        }, 2000);
+    </script>
+</body>
+</html>
