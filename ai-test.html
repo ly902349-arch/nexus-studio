@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🤖 اختبار Gemini AI - Nexus Studio</title>
+    <style>
+        * {
+            font-family: 'Cairo', sans-serif;
+            box-sizing: border-box;
+        }
+        
+        body {
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: white;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        h1 {
+            text-align: center;
+            background: linear-gradient(45deg, #8b5cf6, #ec4899);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 30px;
+        }
+        
+        .test-section {
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 24px;
+            background: #6366f1;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            font-weight: bold;
+            margin: 5px;
+            transition: all 0.3s;
+        }
+        
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(99, 102, 241, 0.3);
+        }
+        
+        .btn-success { background: #10b981; }
+        .btn-warning { background: #f59e0b; }
+        .btn-danger { background: #ef4444; }
+        
+        textarea {
+            width: 100%;
+            padding: 15px;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            font-size: 16px;
+            margin: 10px 0;
+            min-height: 100px;
+        }
+        
+        textarea::placeholder {
+            color: rgba(255, 255, 255, 0.5);
+        }
+        
+        .result {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            padding: 15px;
+            margin-top: 15px;
+            white-space: pre-wrap;
+            font-family: monospace;
+            max-height: 300px;
+            overflow-y: auto;
+        }
+        
+        .success { border-right: 5px solid #10b981; }
+        .error { border-right: 5px solid #ef4444; }
+        .loading { border-right: 5px solid #f59e0b; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🤖 اختبار Gemini AI - Nexus Studio</h1>
+        
+        <div class="test-section">
+            <h3>🔗 اختبار الاتصال</h3>
+            <button class="btn" onclick="testConnection()">
+                <i class="fas fa-plug"></i>
+                اختبار الاتصال بـ API
+            </button>
+            <div id="connectionResult" class="result"></div>
+        </div>
+        
+        <div class="test-section">
+            <h3>💬 محادثة مباشرة</h3>
+            <textarea id="chatInput" placeholder="اكتب رسالتك هنا..."></textarea>
+            <button class="btn btn-success" onclick="sendChat()">
+                <i class="fas fa-paper-plane"></i>
+                إرسال إلى Gemini AI
+            </button>
+            <div id="chatResult" class="result"></div>
+        </div>
+        
+        <div class="test-section">
+            <h3>🎯 ميزات متقدمة</h3>
+            <div>
+                <button class="btn" onclick="testVideoIdeas()">
+                    <i class="fas fa-lightbulb"></i>
+                    توليد أفكار فيديو
+                </button>
+                <button class="btn" onclick="testScriptWriting()">
+                    <i class="fas fa-scroll"></i>
+                    كتابة سيناريو
+                </button>
+                <button class="btn" onclick="testPerformanceAnalysis()">
+                    <i class="fas fa-chart-line"></i>
+                    تحليل أداء
+                </button>
+                <button class="btn" onclick="testThumbnailDesign()">
+                    <i class="fas fa-palette"></i>
+                    تصميم ثامبريل
+                </button>
+                <button class="btn" onclick="testLiveStream()">
+                    <i class="fas fa-broadcast-tower"></i>
+                    تحضير بث مباشر
+                </button>
+            </div>
+            <div id="featureResult" class="result"></div>
+        </div>
+        
+        <div class="test-section">
+            <h3>📊 إحصائيات النظام</h3>
+            <button class="btn btn-warning" onclick="getStats()">
+                <i class="fas fa-chart-bar"></i>
+                عرض الإحصائيات
+            </button>
+            <button class="btn btn-danger" onclick="clearHistory()">
+                <i class="fas fa-trash"></i>
+                مسح التاريخ
+            </button>
+            <div id="statsResult" class="result"></div>
+        </div>
+    </div>
+
+    <script src="public/js/config.js"></script>
+    <script src="public/js/gemini-ai.js"></script>
+    <script>
+        // تهيئة Gemini AI
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('🔧 تهيئة اختبار Gemini AI...');
+            
+            // تهيئة AI بعد تحميل الملفات
+            setTimeout(() => {
+                const ai = initGeminiAI();
+                if (ai) {
+                    showResult('connectionResult', '✅ Gemini AI مهيأ وجاهز!', 'success');
+                } else {
+                    showResult('connectionResult', '❌ فشل تهيئة Gemini AI', 'error');
+                }
+            }, 1000);
+        });
+        
+        // اختبار الاتصال
+        async function testConnection() {
+            showResult('connectionResult', '🔌 جاري اختبار الاتصال...', 'loading');
+            
+            try {
+                if (!window.gemini) {
+                    initGeminiAI();
+                }
+                
+                const result = await window.gemini.testConnection();
+                
+                if (result.connected) {
+                    showResult('connectionResult', 
+                        `✅ اتصال ناجح!\n\n` +
+                        `📊 الإحصائيات:\n` +
+                        `- الوقت: ${new Date(result.details.responseTime).toLocaleTimeString('ar-EG')}\n` +
+                        `- الرسالة: "${result.details.message}"\n` +
+                        `- Tokens: ${result.details.tokens}\n` +
+                        `- Request ID: ${result.details.requestId}`,
+                        'success'
+                    );
+                } else {
+                    showResult('connectionResult', 
+                        `❌ فشل الاتصال\n\n` +
+                        `الخطأ: ${result.error || 'غير معروف'}`,
+                        'error'
+                    );
+                }
+                
+            } catch (error) {
+                showResult('connectionResult', 
+                    `💥 خطأ في الاختبار\n\n` +
+                    `${error.message}\n\n` +
+                    `المفتاح: ${window.NEXUS_CONFIG?.GEMINI_API_KEY?.substring(0, 15) || 'غير موجود'}...`,
+                    'error'
+                );
+            }
+        }
+        
+        // إرسال محادثة
+        async function sendChat() {
+            const input = document.getElementById('chatInput');
+            const message = input.value.trim();
+            
+            if (!message) {
+                showResult('chatResult', '⚠️ الرجاء كتابة رسالة أولاً', 'error');
+                return;
+            }
+            
+            showResult('chatResult', '🤖 جاري إرسال الرسالة...', 'loading');
+            
+            try {
+                const response = await chatWithGemini(message);
+                
+                if (response.success) {
+                    showResult('chatResult', 
+                        `✅ الرد:\n\n${response.message}\n\n` +
+                        `📊 التفاصيل:\n` +
+                        `- Tokens: ${response.tokens}\n` +
+                        `- Request ID: ${response.requestId}\n` +
+                        `- الوقت: ${new Date(response.responseTime).toLocaleTimeString('ar-EG')}`,
+                        'success'
+                    );
+                } else {
+                    showResult('chatResult', 
+                        `❌ فشل الإرسال\n\n` +
+                        `الخطأ: ${response.error.message}\n\n` +
+                        `الرد الاحتياطي:\n${response.message}`,
+                        'error'
+                    );
+                }
+                
+            } catch (error) {
+                showResult('chatResult', 
+                    `💥 خطأ غير متوقع\n\n${error.message}`,
+                    'error'
+                );
+            }
+        }
+        
+        // اختبار توليد أفكار الفيديو
+        async function testVideoIdeas() {
+            showResult('featureResult', '💡 جاري توليد أفكار فيديو...', 'loading');
+            
+            try {
+                const response = await window.gemini.generateVideoIdeas('التسويق الرقمي', 3);
+                showResult('featureResult', response.message, response.success ? 'success' : 'error');
+            } catch (error) {
+                showResult('featureResult', `❌ خطأ: ${error.message}`, 'error');
+            }
+        }
+        
+        // اختبار كتابة السيناريو
+        async function testScriptWriting() {
+            showResult('featureResult', '📝 جاري كتابة سيناريو...', 'loading');
+            
+            try {
+                const response = await window.gemini.writeVideoScript('كيفية إنشاء محتوى ناجح', 5);
+                showResult('featureResult', response.message, response.success ? 'success' : 'error');
+            } catch (error) {
+                showResult('featureResult', `❌ خطأ: ${error.message}`, 'error');
+            }
+        }
+        
+        // اختبار تحليل الأداء
+        async function testPerformanceAnalysis() {
+            showResult('featureResult', '📊 جاري تحليل الأداء...', 'loading');
+            
+            try {
+                const data = {
+                    views: 1250,
+                    engagement: '24.5%',
+                    watchTime: '4:30',
+                    platform: 'YouTube',
+                    type: 'تعليمي'
+                };
+                
+                const response = await window.gemini.analyzePerformance(data);
+                showResult('featureResult', response.message, response.success ? 'success' : 'error');
+            } catch (error) {
+                showResult('featureResult', `❌ خطأ: ${error.message}`, 'error');
+            }
+        }
+        
+        // اختبار تصميم الثامبريل
+        async function testThumbnailDesign() {
+            showResult('featureResult', '🎨 جاري تصميم ثامبريل...', 'loading');
+            
+            try {
+                const response = await window.gemini.designThumbnail(
+                    'أفضل 10 نصائح للتسويق الرقمي في 2024',
+                    'جذاب واحترافي',
+                    'يوتيوب'
+                );
+                showResult('featureResult', response.message, response.success ? 'success' : 'error');
+            } catch (error) {
+                showResult('featureResult', `❌ خطأ: ${error.message}`, 'error');
+            }
+        }
+        
+        // اختبار تحضير البث المباشر
+        async function testLiveStream() {
+            showResult('featureResult', '📹 جاري تحضير بث مباشر...', 'loading');
+            
+            try {
+                const response = await window.gemini.prepareLiveStream(
+                    'التسويق عبر وسائل التواصل الاجتماعي',
+                    60,
+                    'رواد الأعمال والمسوقين'
+                );
+                showResult('featureResult', response.message, response.success ? 'success' : 'error');
+            } catch (error) {
+                showResult('featureResult', `❌ خطأ: ${error.message}`, 'error');
+            }
+        }
+        
+        // الحصول على إحصائيات
+        function getStats() {
+            if (window.gemini) {
+                const stats = window.gemini.getStats();
+                showResult('statsResult', 
+                    `📊 إحصائيات Gemini AI:\n\n` +
+                    `📞 إجمالي الطلبات: ${stats.totalRequests}\n` +
+                    `✅ الناجحة: ${stats.successfulRequests}\n` +
+                    `❌ الفاشلة: ${stats.failedRequests}\n` +
+                    `🎯 معدل النجاح: ${stats.successRate}%\n` +
+                    `🔤 إجمالي الـ Tokens: ${stats.totalTokens}\n` +
+                    `📈 المتوسط: ${stats.averageTokens} لكل طلب\n` +
+                    `💬 طول المحادثة: ${stats.conversationLength} رسالة\n` +
+                    `⏰ آخر طلب: ${stats.lastRequestTime ? new Date(stats.lastRequestTime).toLocaleString('ar-EG') : 'لا يوجد'}`,
+                    'success'
+                );
+            } else {
+                showResult('statsResult', '❌ Gemini AI غير مهيأ', 'error');
+            }
+        }
+        
+        // مسح التاريخ
+        function clearHistory() {
+            if (window.gemini && window.gemini.clearHistory()) {
+                showResult('statsResult', '🗑️ تم مسح تاريخ المحادثة بنجاح', 'success');
+            } else {
+                showResult('statsResult', '❌ فشل مسح التاريخ', 'error');
+            }
+        }
+        
+        // عرض النتائج
+        function showResult(elementId, message, type) {
+            const element = document.getElementById(elementId);
+            element.textContent = message;
+            element.className = 'result ' + type;
+            element.scrollTop = element.scrollHeight;
+        }
+    </script>
+</body>
+</html>
