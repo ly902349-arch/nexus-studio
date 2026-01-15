@@ -1,0 +1,40 @@
+{
+  "name": "nexus-studio",
+  "version": "1.0.0",
+  "description": "منصة المحتوى الذكية باللغة العربية - تطوير كامل من iPhone",
+  "main": "index.html",
+  "scripts": {
+    "start": "echo 'افتح index.html في المتصفح'",
+    "dev": "echo 'وضع التطوير'",
+    "build": "echo 'بناء المشروع'",
+    "deploy": "vercel --prod",
+    "test": "echo 'اختبار التطبيق'"
+  },
+  "keywords": [
+    "content",
+    "studio",
+    "arabic",
+    "video",
+    "creator",
+    "mobile-development",
+    "iphone-coding"
+  ],
+  "author": "Nexus Studio Team <team@nexusstudio.dev>",
+  "contributors": [
+    "ly902349-arch"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ly902349-arch/nexus-studio.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ly902349-arch/nexus-studio/issues"
+  },
+  "homepage": "https://nexus-studio.vercel.app",
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "dependencies": {},
+  "devDependencies": {}
+}
